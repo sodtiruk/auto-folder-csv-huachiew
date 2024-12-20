@@ -4,6 +4,7 @@ this is a part of script to help create folder from huachiew-hospital
 ## Installation
 #### Requirements 
 - python version 3.13.1
+https://www.python.org/downloads/release/python-3131/
 
 #### Install 
 ```
