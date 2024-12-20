@@ -12,7 +12,7 @@ python -m venv env
 ```
 macos
 ```
-env/bin/activate
+source env/bin/activate
 ```
 
 windows
