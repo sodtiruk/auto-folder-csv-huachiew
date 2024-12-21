@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Load CSV file
-dataframe = pd.read_csv("test.csv")
+dataframe = pd.read_csv("NameHN.csv")
 
 for index, row in dataframe.iterrows():
     base_path = f"result/{str(row['ฝ่าย']).strip()}/{str(row['แผนก']).strip()}/{str(row['ตำแหน่ง']).strip()}/{str(row['ชื่อ']).strip() + str(row['สกุล'])}".strip()
