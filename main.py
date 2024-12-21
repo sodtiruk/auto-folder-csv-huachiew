@@ -1,13 +1,23 @@
 import os
-import pandas as p
+import pandas as pd
 
-dataframe = p.read_csv("NameHN.csv") # Your CSV
+# Load CSV file
+dataframe = pd.read_csv("test.csv")
 
-for index, row in dataframe.iterrows(): 
+for index, row in dataframe.iterrows():
+    base_path = f"result/{str(row['ฝ่าย']).strip()}/{str(row['แผนก']).strip()}/{str(row['ตำแหน่ง']).strip()}/{str(row['ชื่อ']).strip() + str(row['สกุล'])}".strip()
 
-    tranningFolder = f"{row['ฝ่าย']}/{row['แผนก']}/{row['ตำแหน่ง']}/{row['ชื่อ']+row['สกุล']}/{str("Trainning")}"
-    resultHealth = f"{row['ฝ่าย']}/{row['แผนก']}/{row['ตำแหน่ง']}/{row['ชื่อ']+row['สกุล']}/{str("ผลตรวจสุขภาพ")}"
-    vacine = f"{row['ฝ่าย']}/{row['แผนก']}/{row['ตำแหน่ง']}/{row['ชื่อ']+row['สกุล']}/{str("วัคซัน")}"
-    os.makedirs(tranningFolder)
-    os.makedirs(resultHealth)
-    os.makedirs(vacine)
+    # Define folder paths
+    training_folder = f"{base_path}/Trainning"
+    result_health_folder = f"{base_path}/ผลตรวจสุขภาพ"
+    vaccine_folder = f"{base_path}/วัคซัน"
+
+    # Create directories if they do not exist
+    print(training_folder)
+    os.makedirs(training_folder, exist_ok=True)
+
+    print(result_health_folder)
+    os.makedirs(result_health_folder, exist_ok=True)
+
+    print(vaccine_folder)
+    os.makedirs(vaccine_folder, exist_ok=True)
